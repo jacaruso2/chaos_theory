@@ -8,7 +8,7 @@ rs = np.linspace(1,4,1000)
 
 #print(rs)
 
-stablization_record = []
+stabilization_record = []
 
 def core_function(rate):
     r = rate
@@ -17,8 +17,8 @@ def core_function(rate):
         x_at_n = array[-1]
         next_x = r * x_at_n * (1-x_at_n)
         array.append(round(next_x,5))
-    stabalization = list(set(array[-300:]))
-    stablization_record.append(tuple(stabalization))
+    stabilization = list(set(array[-300:]))
+    stabilization_record.append(tuple(stabilization))
 
 for value in rs:
     core_function(value)
@@ -30,7 +30,7 @@ def core_function_plot(rate):
         x_at_n = array[-1]
         next_x = r * x_at_n * (1-x_at_n)
         array.append(next_x)
-    stabalization = list(set(array[-15:]))
+    stabilization = list(set(array[-15:]))
     x = np.arange(1,1001)
     y = np.array(array)
     plt.xlabel("Iteration")
@@ -44,7 +44,7 @@ def core_function_plot(rate):
 
 
 xs = [i for i in rs]
-ys = stablization_record
+ys = stabilization_record
 
 pxs = []
 pys = []
@@ -73,7 +73,7 @@ def phase_diagram(r):
 
 s,x,y,z = phase_diagram(4)
 
-print(len(x), len(y), len(z))
+#print(len(x), len(y), len(z))
 
 #Show logistic map:
 
